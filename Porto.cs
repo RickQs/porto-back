@@ -14,6 +14,17 @@ namespace porto_back
         public ICollection<Movimentacao>? Movimentacoes { get; set; }
     }
 
+    public class ConteinerDto
+    {
+        public string NumConteiner { get; set; }
+        public string Cliente { get; set; }
+        public TipoConteinerEnum TipoConteiner { get; set; }
+        public string Status { get; set; }
+        public string Categoria { get; set; }
+
+        public ICollection<Movimentacao>? Movimentacoes { get; set; }
+    }
+
     public class Movimentacao
     {
         public int Id { get; set; }
@@ -22,6 +33,6 @@ namespace porto_back
         public DateTime DataHoraFim { get; set; }
 
         public string NumConteiner { get; set; }
-        public required Conteiner Conteiner { get; set; }
+        public Conteiner Conteiner { get; set; } = null!;
     }
 }
